@@ -10,12 +10,6 @@
 require('rspec')
 require('weekday_finder')
 
-# Returns the year
-describe('Time#find_weekday') do
-  it("Returns the year") do
-    expect(Time.new(2015, 04, 20).find_weekday('2015-04-20')).to(eq(2015))
-  end
-end
 
 # Returns Monday if it's Monday
 describe('Time#find_weekday') do
@@ -23,4 +17,11 @@ describe('Time#find_weekday') do
     expect(Time.new(2015, 04, 20).find_weekday('2015-04-20')).to(eq('Monday'))
   end
 
+  it("Returns 'Tuesday' if it's Tuesday") do
+    expect(Time.new(2015, 04, 21).find_weekday('2015-04-21')).to(eq('Tuesday'))
+  end
+
+  it("Returns 'Wednesday' if it's Wednesday") do
+    expect(Time.new(2015, 04, 22).find_weekday('2015-04-22')).to(eq('Wednesday'))
+  end
 end
